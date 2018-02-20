@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Catianne Troncin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -134,13 +134,19 @@ def run_test_practice_problem3():
     # SUGGESTION: Ask an assistant to CHECK your tests to confirm
     #             that they are adequate tests!
     ####################################################################
+    st.SimpleTestCase(practice_problem3,
+                               [],
+                               [1, 7])
+    st.SimpleTestCase(practice_problem3,
+                               [0, 0, 0],
+                               [])
 
 
 def practice_problem3(start, n, threshold):
     """
     What comes in:
       -- An integer:  start
-      -- An nonnegative integer:  n
+      -- A nonnegative integer:  n
       -- A number:  threshold
     What goes out:  Returns a list of the first n integers,
       starting at start, for which the sum of the integer's
@@ -216,9 +222,16 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
+    number = 0
+    new_list = []
+    k = start
+    while True:
+        if math.sin(number) + math.cos(number) > threshold:
+            if len(new_list) > n:
+                return new_list
+            else:
+                new_list = new_list + [k]
+        k = k + 1
 
 
-# ----------------------------------------------------------------------
-# Calls  main  to start the ball rolling.
-# ----------------------------------------------------------------------
 main()
